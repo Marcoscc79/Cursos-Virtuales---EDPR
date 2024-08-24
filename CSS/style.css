@@ -1,0 +1,328 @@
+/* Aplicar un modelo de diseño de caja natural a todos los elementos, pero permitiendo que los componentes cambien */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10 px = 1 rem */
+  }
+  
+  body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.6rem;
+      line-height: 2;
+    }
+    /** Globales **/
+    .contenedor {
+        max-width: 1200px;
+        width: 95%;
+        margin: 0 auto;
+    }
+    h1, h2, h3, h4 {
+        font-family: 'PT Sans', sans-serif;
+        text-shadow: 1px 1px 0px #c0c0c0, /* Sombra oscura para el bisel */
+                    -1px -1px 0px #ffffff; /* Sombra clara para la luz en el bisel */
+  }
+  h1 {
+      font-size: 4.8rem;
+  }
+  h2 {
+      font-size: 4rem;
+      line-height: 1.2;
+  }
+  h3 {
+      font-size: 3.2rem;
+      text-align: center;
+      color: chocolate;
+  }
+  h4{
+      font-size: 2.8rem;
+  }
+  img {
+      max-width: 80%;
+  }
+  /** Utilidades **/
+  .centrar-texto {
+      text-align: center;
+  }
+  .no-margin {
+      margin: 0;
+  }
+
+  /** Grid **/
+   @media (min-width:768px) {
+      .grid {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      }
+      .centrar-columnas {
+          justify-content: center;
+      }
+      .columnas-4 {
+          flex: 0 0 calc(33.3% - 1rem); 
+      }
+      .columnas-6 {
+          flex: 0 0 calc(50% - 1rem);
+      }
+      .columnas-8 {
+          flex: 0 0 calc(66.6% -1rem);
+      }
+      .columnas-10 {
+          flex: 0 0 calc(83.3% - 1rem);
+      }
+      .columnas-12 {
+          flex: 0 0 100%;
+      }
+}
+  
+  /** Botones **/
+  .btn {
+      display: block;
+      text-align: center;
+      padding: 1rem 3rem;
+      margin: 2rem 0;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'PT sans', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 2rem;
+      flex: 0 0 100%;
+  }
+  .btn:hover {
+      cursor: pointer;
+  }
+  @media (min-width:600px) {
+      .btn {
+          display: inline-block;
+          flex: 0 0 auto;
+      }
+  }
+  
+  .btn-primario {
+      background-color: #000000;
+  }
+  .btn-secundario {
+      background-color: #784d3c;
+  }
+  .btn-danger {
+      background-color: #784d3c;
+  }
+  .btn-rtdo {
+      background-color: #3a722d;
+      color: #ffffff;
+      font-size: 1.8rem;
+      width:35rem;
+      height:5rem;
+      margin: 1rem 0;
+      padding: 1rem 3rem;
+      font-weight: 700;
+  }
+  /** Header **/
+  @media (min-width:768px) {
+      .barra {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;  
+      }
+  }
+  .site-header {
+      background-image: url(../img/Imagen\_principal.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      height: 60rem;
+  }
+  .site-header a {
+      color: rgb(17, 99, 146);
+      text-decoration: none;
+  }
+  .site-header h1 {
+      text-align: center;
+      font-weight: 400;
+  }
+  .site-header h2 {
+      color: rgb(17, 99, 146);
+  }
+  .site-header h1 span {
+      font-weight: 700;
+  }
+  .site-header p {
+       color: rgb(17, 99, 146);
+  }
+  .texto-header p {
+       font-weight: 600;
+  }
+  
+  /** Navegación **/
+  .navegacion a {
+      text-align: center;
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: rgb(17, 99, 146);
+      text-decoration: none;
+      text-shadow: 2px 2px 0px #c0c0c0, -.2px -.2px 0px #ffffff;
+  }
+  .navegacion a:hover {
+      color: #e1e1e1;
+  }
+  
+  @media (min-width:768px) {
+      .navegacion a {
+          display: inline;
+          margin-right: 2rem;
+      }
+      .navegacion a:last-of-type {
+          margin: 0;
+      }
+  }
+  
+  /** Texto header **/
+  .texto-header {
+      color: #ffffff;
+      text-align: center;
+      margin-top: 5rem;
+  }
+  @media (min-width:768px) {
+      .texto-header {
+          margin-top: 5rem;
+      }
+  }
+  
+  .texto-header p {
+      font-size: 2.2rem;
+  }
+  
+  /** Contenido principal HOME **/
+  .contenido-principal { 
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .temas,
+  .curso {
+      flex: 0 0 100%;
+  }
+  
+  .curso {
+      order: -1;
+  }
+  
+  @media (min-width:768px) {
+      .contenido-principal {
+          justify-content: space-between;
+      }
+      .temas {
+          flex-basis: 66.6%;
+      }
+      .curso {
+          flex-basis: calc(33.3% - 4rem);
+          order: 2;
+      }
+  }
+  
+  /** Opcional **/
+  .entrada-temas {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #e1e1e1;
+  }
+  .entrada-temas:last-of-type {
+      border: none;
+  }
+  
+  /** Cursos sidebar **/
+  .cursos-lista {
+      padding: 0;
+      list-style: none;   
+  }
+  .grid .columnas-4, .columnas-8 {
+    display: inline-block;
+    padding: 3rem;
+  }
+  .curso {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #e1e1e1;
+  }
+  .curso:last-of-type {
+      border-bottom: none;
+  }
+  .curso p {
+      font-family: 'PT Sans',sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+  }
+  .curso p span, .curso p.descripcion {
+      font-weight: 400;
+  }
+  .curso h4 {
+      color: rgb(17, 99, 146);
+  }
+  
+  /** Footer **/
+  .site-footer {
+      background-color: #000000;
+      padding: 3rem;
+      margin-top: 4rem;
+  }
+  .site-footer p {
+      color: #ffffff;
+      font-size: 4rem;
+      font-weight: 400;
+      font-family: 'PT Sans', sans-serif;
+      text-align: center;
+  }
+  .site-footer p span {
+      font-weight: 700;
+  }
+
+  /** Contacto **/
+  .formulario-contacto {
+      background-color: #ffffff;
+      padding: 5rem;
+  }
+  @media (min-width:768px) {
+  .formulario-contacto {
+      margin-top: -10rem;
+    }
+  }
+  .formulario-contacto .campo {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+  }
+  .formulario-contacto .campo label {
+      flex: 0 0 8rem;
+  }
+  .formulario-contacto .campo input:not([type="submit"]), 
+  .formulario-contacto textarea {
+      flex: 1;
+      border: 1px solid #e1e1e1;
+      padding: 1rem;
+  }
+  .formulario-contacto textarea {
+      height: 20rem;
+  }
+  .formulario-contacto .enviar {
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  /** Adivinanza **/
+  .boton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width:320px) {
+    .cuestionario {
+        text-align: center;
+        background-color: #e49f83;
+        color: #ffffff;
+        font-size: 1.6rem;
+        width: 100%;
+      }
+  }
+  #resultado {
+    text-align: center;
+  }
+  
